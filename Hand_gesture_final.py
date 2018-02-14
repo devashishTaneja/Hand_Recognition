@@ -13,7 +13,7 @@ while 1:
 	ret, img = cap.read()
 	blur = cv2.GaussianBlur(img,(5,5),0) # BLURRING IMAGE TO SMOOTHEN EDGES
 	gray = cv2.cvtColor(blur, cv2.COLOR_BGR2GRAY) # BGR -> GRAY CONVERSION
-	retval2,thresh1 = cv2.threshold(gray,7,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU) # THRESHOLDING IMAGE
+	retval2,thresh1 = cv2.threshold(gray,70,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU) # THRESHOLDING IMAGE
 	hand = hand_cascade.detectMultiScale(thresh1, 1.3, 5) # DETECTING HAND IN THE THRESHOLDE IMAGE
 	mask = np.zeros(thresh1.shape, dtype = "uint8") # CREATING MASK
 	for (x,y,w,h) in hand: # MARKING THE DETECTED ROI
