@@ -1,3 +1,6 @@
+#welcome us 
+print("Welcome to all of us in Hand_Recognition Programme")
+
 # IMPORTING LIBRARIES
 import numpy as np
 import cv2
